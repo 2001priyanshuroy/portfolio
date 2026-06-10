@@ -65,7 +65,7 @@ export default function RootLayout({
         <div
           className="fixed top-0 w-full h-1 bg-gradient-to-r from-primary via-secondary to-accent z-50 origin-left"
           id="scroll-progress"
-          style={{ scaleX: 0 }}
+          style={{ transform: "scaleX(0)" }}
         />
         <Navbar />
         <main className="min-h-screen">{children}</main>
