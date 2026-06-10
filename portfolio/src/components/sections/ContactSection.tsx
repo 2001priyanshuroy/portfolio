@@ -243,7 +243,7 @@ export const ContactSection: React.FC = () => {
                         className="flex items-center gap-2 text-green-400 text-sm"
                       >
                         <CheckCircle size={16} />
-                        Message sent! I'll get back to you soon.
+                        Message sent! I&apos;ll get back to you soon.
                       </motion.div>
                     )}
                     {status === "error" && (

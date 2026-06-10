@@ -56,7 +56,7 @@ export const HeroSection: React.FC = () => {
         {/* Main Heading with Typing Animation */}
         <motion.div variants={animationVariants.itemVariants} className="mb-6">
           <h1 className="text-5xl md:text-7xl font-bold mb-4 leading-tight">
-            I'm{" "}
+            I&apos;m{" "}
             <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
               Priyanshu Roy
             </span>
