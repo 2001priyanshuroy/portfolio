@@ -1,0 +1,20 @@
+{
+  "buildCommand": "npm run build",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "nodeVersion": "18.x",
+  "outputDirectory": ".next",
+  "env": [
+    {
+      "key": "EMAIL_USER",
+      "description": "Gmail address for sending emails"
+    },
+    {
+      "key": "EMAIL_PASSWORD",
+      "description": "Gmail App Password"
+    }
+  ],
+  "deployButton": {
+    "text": "Deploy with Vercel"
+  }
+}

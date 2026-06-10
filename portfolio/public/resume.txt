@@ -1,0 +1,11 @@
+# Resume Placeholder
+
+To add your actual resume PDF:
+
+1. Generate or export your resume as a PDF
+2. Place it in the `public/` folder as `resume.pdf`
+3. Update the download link in the contact form if needed
+
+The file is referenced at: `src/data/content.ts` → `personalData.resume`
+
+When deployed, it will be accessible at: `https://yourdomain.com/resume.pdf`
