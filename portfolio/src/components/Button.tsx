@@ -3,11 +3,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps {
   variant?: "primary" | "secondary" | "outline";
   size?: "sm" | "md" | "lg";
   children: React.ReactNode;
   isLoading?: boolean;
+  className?: string;
+  type?: "button" | "submit" | "reset";
+  disabled?: boolean;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -16,7 +20,9 @@ export const Button: React.FC<ButtonProps> = ({
   children,
   isLoading = false,
   className = "",
-  ...props
+  type = "button",
+  disabled,
+  onClick,
 }) => {
   const baseStyles =
     "font-semibold rounded-lg transition-all duration-300 relative overflow-hidden group";
@@ -38,18 +44,19 @@ export const Button: React.FC<ButtonProps> = ({
 
   return (
     <motion.button
+      type={type}
+      disabled={isLoading || disabled}
+      onClick={onClick}
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       className={`${baseStyles} ${variantStyles[variant]} ${sizeStyles[size]} ${className}`}
-      disabled={isLoading}
-      {...props}
     >
       <span className="relative z-10 flex items-center justify-center gap-2">
         {isLoading && (
           <motion.div
             className="w-4 h-4 border-2 border-current border-t-transparent rounded-full"
             animate={{ rotate: 360 }}
-            transition={{ duration: 1, repeat: Infinity }}
+            transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
           />
         )}
         {children}
